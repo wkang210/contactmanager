@@ -14,7 +14,7 @@ class EditContact extends Component {
 
     async componentDidMount(){
         const {id} = this.props.match.params;
-        const response = await axios.get(`http://jsonplaceholder.typicode.com/users/${id}`);
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
         const contact = response.data;
         this.setState({
             name: contact.name,
@@ -57,7 +57,7 @@ class EditContact extends Component {
         }
 
         const {id} = this.props.match.params;
-        const response = await axios.put(`http://jsonplaceholder.typicode.com/users/${id}`, updateContact);
+        const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, updateContact);
 
         dispatch({type:'EDIT_CONTACT', payload: response.data})
 
